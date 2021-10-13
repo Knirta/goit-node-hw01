@@ -12,8 +12,12 @@ async function invokeAction({ action, id, name, email, phone }) {
     case "list":
       try {
         const contacts = await listContacts();
-        console.log(chalk.green("Contacts list:"));
-        console.table(contacts);
+        if (contacts.length) {
+          console.log(chalk.green("Contacts list:"));
+          console.table(contacts);
+        } else {
+          console.log(chalk.red("Contacts list is empty"));
+        }
       } catch (err) {
         console.error(err);
       }
@@ -22,7 +26,7 @@ async function invokeAction({ action, id, name, email, phone }) {
     case "get":
       try {
         const contact = await getContactById(id);
-        if (Object.keys(contact).length) {
+        if (contact.length) {
           console.log(chalk.green("Contact found!"));
           console.log(contact);
         } else {
@@ -46,7 +50,7 @@ async function invokeAction({ action, id, name, email, phone }) {
     case "remove":
       try {
         const contact = await removeContact(id);
-        if (Object.keys(contact).length) {
+        if (contact.length) {
           console.log(chalk.green("Removed contact:"));
           console.log(contact);
         } else {
