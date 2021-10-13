@@ -1,0 +1,30 @@
+{
+  "name": "goit-node-hw01",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "start:dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Knirta/goit-node-hw01.git"
+  },
+  "author": "Knirta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Knirta/goit-node-hw01/issues"
+  },
+  "homepage": "https://github.com/Knirta/goit-node-hw01#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "shortid": "^2.2.16",
+    "yargs": "^17.2.1"
+  }
+}
