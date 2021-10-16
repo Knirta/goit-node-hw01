@@ -26,7 +26,7 @@ async function invokeAction({ action, id, name, email, phone }) {
     case "get":
       try {
         const contact = await getContactById(id);
-        if (contact.length) {
+        if (contact) {
           console.log(chalk.green("Contact found!"));
           console.log(contact);
         } else {
@@ -50,7 +50,7 @@ async function invokeAction({ action, id, name, email, phone }) {
     case "remove":
       try {
         const contact = await removeContact(id);
-        if (contact.length) {
+        if (contact) {
           console.log(chalk.green("Removed contact:"));
           console.log(contact);
         } else {

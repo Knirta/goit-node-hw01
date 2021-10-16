@@ -33,12 +33,15 @@ function listContacts() {
 
 async function getContactById(contactId) {
   const contacts = await readContacts();
-  return contacts.filter((contact) => String(contact.id) === String(contactId));
+  const [contact] = contacts.filter(
+    (contact) => String(contact.id) === String(contactId)
+  );
+  return contact;
 }
 
 async function removeContact(contactId) {
   const contacts = await readContacts();
-  const removedContact = contacts.filter(
+  const [removedContact] = contacts.filter(
     (contact) => String(contact.id) === String(contactId)
   );
   const filteredContacts = contacts.filter(
